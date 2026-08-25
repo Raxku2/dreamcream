@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DreamCream - Practice</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,412 +14,497 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/TextPlugin.min.js"></script>
-    <script></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
+        html {
+            /* Enables native smooth scrolling for anchor links */
+            scroll-behavior: smooth;
+        }
 
-      .no-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
+        html,
+        body {
+            overscroll-behavior: none;
+        }
 
-      /* =========================================
+        /* =========================================
         1. BESPOKE SERIF
         ========================================= */
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-Light.otf")
-          format("opentype");
-        font-weight: 300;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-LightItalic.otf")
-          format("opentype");
-        font-weight: 300;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-LightItalic.otf') format('opentype');
+            font-weight: 300;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-Regular.otf")
-          format("opentype");
-        font-weight: 400;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-Italic.otf")
-          format("opentype");
-        font-weight: 400;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-Italic.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-Medium.otf")
-          format("opentype");
-        font-weight: 500;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-MediumItalic.otf")
-          format("opentype");
-        font-weight: 500;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-MediumItalic.otf') format('opentype');
+            font-weight: 500;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-Bold.otf")
-          format("opentype");
-        font-weight: 700;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-BoldItalic.otf")
-          format("opentype");
-        font-weight: 700;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-BoldItalic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-Extrabold.otf")
-          format("opentype");
-        font-weight: 800;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-Extrabold.otf') format('opentype');
+            font-weight: 800;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Bespoke Serif";
-        src: url("./assets/fonts/BespokeSerif_Complete/BespokeSerif-ExtraboldItalic.otf")
-          format("opentype");
-        font-weight: 800;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('./assets/fonts/BespokeSerif_Complete/BespokeSerif-ExtraboldItalic.otf') format('opentype');
+            font-weight: 800;
+            font-style: italic;
+        }
 
-      /* =========================================
+        /* =========================================
         2. BOSKA
         ========================================= */
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-Extralight.otf")
-          format("opentype");
-        font-weight: 200;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-Extralight.otf') format('opentype');
+            font-weight: 200;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-ExtralightItalic.otf")
-          format("opentype");
-        font-weight: 200;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-ExtralightItalic.otf') format('opentype');
+            font-weight: 200;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-Light.otf")
-          format("opentype");
-        font-weight: 300;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-LightItalic.otf")
-          format("opentype");
-        font-weight: 300;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-LightItalic.otf') format('opentype');
+            font-weight: 300;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-Regular.otf")
-          format("opentype");
-        font-weight: 400;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-Italic.otf")
-          format("opentype");
-        font-weight: 400;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-Italic.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-Medium.otf")
-          format("opentype");
-        font-weight: 500;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-MediumItalic.otf")
-          format("opentype");
-        font-weight: 500;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-MediumItalic.otf') format('opentype');
+            font-weight: 500;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-Bold.otf")
-          format("opentype");
-        font-weight: 700;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-BoldItalic.otf")
-          format("opentype");
-        font-weight: 700;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-BoldItalic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-Black.otf")
-          format("opentype");
-        font-weight: 900;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-Black.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Boska";
-        src: url("./assets/fonts/Boska_Complete/Boska-BlackItalic.otf")
-          format("opentype");
-        font-weight: 900;
-        font-style: italic;
-      }
+        @font-face {
+            font-family: 'Boska';
+            src: url('./assets/fonts/Boska_Complete/Boska-BlackItalic.otf') format('opentype');
+            font-weight: 900;
+            font-style: italic;
+        }
 
-      /* =========================================
+        /* =========================================
         3. PANCHANG
         ========================================= */
 
-      @font-face {
-        font-family: "Panchang";
-        src: url("./assets/fonts/Panchang_Complete/Panchang-Extralight.otf")
-          format("opentype");
-        font-weight: 200;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Panchang';
+            src: url('./assets/fonts/Panchang_Complete/Panchang-Extralight.otf') format('opentype');
+            font-weight: 200;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Panchang";
-        src: url("./assets/fonts/Panchang_Complete/Panchang-Light.otf")
-          format("opentype");
-        font-weight: 300;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Panchang';
+            src: url('./assets/fonts/Panchang_Complete/Panchang-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Panchang";
-        src: url("./assets/fonts/Panchang_Complete/Panchang-Regular.otf")
-          format("opentype");
-        font-weight: 400;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Panchang';
+            src: url('./assets/fonts/Panchang_Complete/Panchang-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Panchang";
-        src: url("./assets/fonts/Panchang_Complete/Panchang-Medium.otf")
-          format("opentype");
-        font-weight: 500;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Panchang';
+            src: url('./assets/fonts/Panchang_Complete/Panchang-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Panchang";
-        src: url("./assets/fonts/Panchang_Complete/Panchang-Semibold.otf")
-          format("opentype");
-        font-weight: 600;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Panchang';
+            src: url('./assets/fonts/Panchang_Complete/Panchang-Semibold.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Panchang";
-        src: url("./assets/fonts/Panchang_Complete/Panchang-Bold.otf")
-          format("opentype");
-        font-weight: 700;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Panchang';
+            src: url('./assets/fonts/Panchang_Complete/Panchang-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
 
-      @font-face {
-        font-family: "Panchang";
-        src: url("./assets/fonts/Panchang_Complete/Panchang-Extrabold.otf")
-          format("opentype");
-        font-weight: 800;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: 'Panchang';
+            src: url('./assets/fonts/Panchang_Complete/Panchang-Extrabold.otf') format('opentype');
+            font-weight: 800;
+            font-style: normal;
+        }
     </style>
 
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              // Creates the 'font-bespoke' class
-              bespoke: ['"Bespoke Serif"', "serif"],
-              // Creates the 'font-boska' class
-              boska: ["Boska", "serif"],
-              // Creates the 'font-panchang' class
-              panchang: ["Panchang", "sans-serif"],
-            },
-          },
-        },
-      };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Creates the 'font-bespoke' class
+                        bespoke: ['"Bespoke Serif"', 'serif'],
+                        // Creates the 'font-boska' class
+                        boska: ['Boska', 'serif'],
+                        // Creates the 'font-panchang' class
+                        panchang: ['Panchang', 'sans-serif'],
+                    }
+                }
+            }
+        }
     </script>
-  </head>
 
-  <body class="p-5 w-dvw h-dvh bg-white overflow-hidden">
-    <main
-      class="w-full h-full relative rounded-[20px] bg-[#341539] text-[#cfc8d1] overflow-x-hidden overflow-y-scroll no-scrollbar"
-    >
-      <section class="h-full w-full rounded-[20px]" id="landing_sec">
-        <!-- The container determines the aspect ratio and max width -->
-        <div
-          class="relative w-full h-full mx-auto aspect-video bg-transparent overflow-hidden rounded-[20px]"
-        >
-          <canvas id="sequenceCanvas" class="w-full h-full block"></canvas>
+</head>
 
-          <h1
-            class="absolute top-[30%] left-1/2 -translate-x-1/2 z-20 text-white mix-blend-difference font-boska font-medium italic whitespace-nowrap text-[4rem] sm:text-[6rem] md:text-[150px] lg:text-[280px]"
-          >
-            DreamCream
-          </h1>
+<body class="p-5 w-dvw h-dvh bg-white">
+
+    <main class="w-full h-full rounded-[20px] bg-[#341539] text-[#cfc8d1] overflow-x-hidden overflow-y-scroll">
+        <section class="bg-blue-900 h-full w-full rounded-[20px] sticky top-0 " id="landing_sec">
+            <div class="relative w-full h-full mx-auto aspect-video bg-white overflow-hidden rounded-[20px]">
+
+                <canvas id="sequenceCanvas" class="w-full h-full block sticky top-0 absolute"></canvas>
+
+                <h1
+                    class="absolute top-[30%] left-1/2 -translate-x-1/2 z-20 text-white mix-blend-difference font-boska font-medium italic whitespace-nowrap text-[4rem] sm:text-[6rem] md:text-[150px] lg:text-[280px]">
+                    DreamCream
+                </h1>
+
+            </div>
+        </section>
+
+
+        <section class="h-full w-full p-2 md:p-[130px] font-bespoke text-[#f4f1ea]">
+            <div class="flex flex-col h-full ">
+                <div class="h-[50%] align-top text-left">
+
+                    <h1 class="text-[24px] md:text-[80px] font-medium uppercase leading-[40px] md:leading-[96px] "
+                        id="tagLine">
+                        Taste absolute supremacy,<br>Your bespoke legacy <br>distilled into pure class
+                    </h1>
+
+                </div>
+                <div class=" h-[50%] md:text-start flex justify-between md:items-end flex-col md:flex-row">
+
+                    <h1 class="text-[24px] md:text-[60px] font-light tracking-[4px] md:tracking-[10px] leading-[80px] "
+                        id="messageText">
+                        A lifetime of <br>absolute triumph <br>merits a crowning act</h1>
+
+
+                    <button
+                        class="cursor-pointer text-[52px] font-light tracking-[8px] flex items-center justify-center">
+                        enquiry
+                        <i class="ri-arrow-right-long-line pt-4"></i>
+
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- marquee scroller  -->
+        <section
+            class="w-full  bg-[#78ff00]  text-black overflow-x-hidden flex text-[3rem] md:text-[30rem] text-nowrap font-panchang">
+
+            <div class="flex shrink-0 h-full " id="marqueeScroller">
+
+
+                <div class="h-full flex  items-center overflow-y-hidden ">
+
+                    <h1 class="px-[10px] py-[10px] uppercase">
+                        Transcending generations
+                    </h1>
+                    <img src="./assets/glasses/goggles_1.svg" alt="Googgles 1"
+                        class="h-[100px] md:h-[300px] w-[100px] md:w-[720px] mx-[10px] ">
+                    <h1 class="px-[10px] py-[10px] uppercase">
+                        Unrivalled taste for the future elite
+                    </h1>
+                    <img src="./assets/glasses/goggles_2.svg" alt="Googgles 1"
+                        class="h-[100px] md:h-[300px] w-[100px] md:w-[720px] mx-[10px] ">
+                    <h1 class="px-[10px] py-[10px] uppercase">
+                        Flawless indulgence for ladies and gentlemen of distinction
+                    </h1>
+                    <img src="./assets/glasses/goggles_3.svg" alt="Googgles 1"
+                        class="h-[100px] md:h-[300px] w-[100px] md:w-[720px] mx-[10px] ">
+                    <h1 class="px-[10px] py-[10px] uppercase">
+                        The ultimate triumph for every discerning eye
+                    </h1>
+                    <img src="./assets/glasses/goggles_4.svg" alt="Googgles 1"
+                        class="h-[100px] md:h-[300px] w-[100px] md:w-[720px] mx-[10px] ">
+
+                </div>
+
+                <div class="h-full flex  items-center overflow-y-hidden ">
+
+                    <h1 class="px-[10px] py-[10px] uppercase">
+                        Transcending generations
+                    </h1>
+                    <img src="./assets/glasses/goggles_1.svg" alt="Googgles 1"
+                        class="h-[100px] md:h-[300px] w-[100px] md:w-[720px] mx-[10px] ">
+                    <h1 class="px-[10px] py-[10px] uppercase">
+                        Unrivalled taste for the future elite
+                    </h1>
+                    <img src="./assets/glasses/goggles_2.svg" alt="Googgles 1"
+                        class="h-[100px] md:h-[300px] w-[100px] md:w-[720px] mx-[10px] ">
+                    <h1 class="px-[10px] py-[10px] uppercase">
+                        Flawless indulgence for ladies and gentlemen of distinction
+                    </h1>
+                    <img src="./assets/glasses/goggles_3.svg" alt="Googgles 1"
+                        class="h-[100px] md:h-[300px] w-[100px] md:w-[720px] mx-[10px] ">
+                    <h1 class="px-[10px] py-[10px] uppercase">
+                        The ultimate triumph for every discerning eye
+                    </h1>
+                    <img src="./assets/glasses/goggles_4.svg" alt="Googgles 1"
+                        class="h-[100px] md:h-[300px] w-[100px] md:w-[720px] mx-[10px] ">
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <footer class="h-12  flex items-end justify-center  w-dvw">
+
+
+
+            <div class="h-[40px] w-dvw md:w-[50dvw] flex justify-center items-end px-[20px] md:p-0 ">
+
+                <div class="bg-white h-[20px] w-[20px] relative  overflow-hidden hidden md:inline ">
+                    <div class="
+                        absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 
+                        bg-[#341539] rounded-full w-[40px] h-[40px]
+                        ">
+                    </div>
+                </div>
+
+                <div class="
+                    bg-white h-full w-full rounded-t-[20px] 
+                    flex justify-center items-center text-[#7d3c98] 
+                    text-[46px] overflow-hidden">
+                    <i class="ri-arrow-up-wide-line" onclick="openFooter()"></i>
+                </div>
+
+
+                <div class="bg-white h-[20px] w-[20px] relative overflow-hidden hidden md:inline">
+                    <div class="absolute top-0 right-0 translate-x-1/2 
+                        -translate-y-1/2 bg-[#341539] rounded-full w-[40px] h-[40px]">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+        </footer>
+
+
+
+
+        <div class="w-dvw flex items-center justify-center fixed top-[100%] ">
+
+            <div class="h-[386px] w-[50dvw] flex justify-center items-end px-[20px]" id="footerOpend">
+
+                <!-- <div class="bg-white h-[20px] w-[20px] relative  overflow-hidden">
+                    <div class="
+                                                                    absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 
+                                                                    bg-[#341539] rounded-full w-[40px] h-[40px]
+                                                                    ">
+                    </div>
+                </div> -->
+
+
+                <div class="
+                                            bg-white h-full w-full rounded-t-[20px] 
+                                            flex items-center  text-[#7d3c98] justify-between
+                                            text-[46px] overflow-hidden flex-col p-[14px]">
+                    <!-- <i class="ri-arrow-up-wide-line"></i> -->
+                    <button
+                        class=" h-[48px] w-[48px] rounded-[20px] text-center bg-[#7d3c98] text-white align-center overflow-hidden flex justify-center items-center"
+                        onclick="closeFooter()">
+
+                        <i class="ri-arrow-down-wide-line"></i>
+                    </button>
+                    <div
+                        class="w-full h-[60%] px-[52px] py-10 flex justify-between items-center text-black font-bespoke font-light text-[18px] tracking-[2px] ">
+                        <div class="flex flex-col justify-between items-start h-full">
+                            <h1 class="cursor-pointer p-2">The Global Concierge</h1>
+                            <h1 class="cursor-pointer p-2">Commission Inquieies</h1>
+                            <h1 class="cursor-pointer p-2">Estatae & Aviation </h1>
+                        </div>
+                        <div class="flex flex-col justify-between items-start h-full">
+                            <h1 class="cursor-pointer p-2">The Founder's Vidion</h1>
+                            <h1 class="cursor-pointer p-2">Master Gastronomers</h1>
+                            <h1 class="cursor-pointer p-2">The Flavour Vault </h1>
+                        </div>
+                        <div class="flex flex-col justify-between items-start h-full">
+                            <h1 class="cursor-pointer p-2">Client Anonymity</h1>
+                            <h1 class="cursor-pointer p-2">Terms of Commission</h1>
+                            <h1 class="cursor-pointer p-2">Palate Directives</h1>
+                        </div>
+
+                    </div>
+                    <div class="w-full text-black font-bespoke text-[14px] flex justify-between items-center flex-col ">
+                        <h1>dsf sfs fweefw rewr rwr </h1>
+                        <h1 class="tracking-[1px] p-4">2026 DreamCream. The Apex of Bespoke Gastronomy. All rights
+                            strictly
+                            reserved.</h1>
+                    </div>
+                </div>
+
+                <!-- 
+                <div class="bg-white h-[20px] w-[20px] relative overflow-hidden ">
+                    <div class="absolute top-0 right-0 translate-x-1/2 
+                    -translate-y-1/2 bg-[#341539] rounded-full w-[40px] h-[40px]">
+                    </div>
+                </div> -->
+
+
+            </div>
         </div>
-      </section>
 
-      <div class="h-full flex flex-col p-[130px]">
-        <div class="h-[50%] text-[80px]">
-          <h1
-            class="text-[80px] text-[#f4f1ea] font-bespoke font-medium text-left align-top uppercase"
-          >
-            Taste absolute supremacy, <br />
-            Your bespoke legacy <br />
-            distilled into pure class
-          </h1>
-        </div>
-
-        <div class="h-[50%] flex items-end justify-between">
-          <h1
-            class="text-[80px] font-bespoke font-light text-[#f4f1ea] tracking-[10px]"
-          >
-            A lifetime of <br />
-            absolute triumph <br />
-            merits a crowning act
-          </h1>
-          <button type=""></button>
-        </div>
-      </div>
-      <!-- <div class="h-full"></div> -->
-
-      <!-- marquee scroller  -->
-      <section
-        class="w-full bg-[#78ff00] text-black overflow-x-hidden flex text-[30rem] text-nowrap font-panchang"
-      >
-        <div class="flex shrink-0 h-full" id="marqueeScroller">
-          <div class="h-full flex items-center overflow-y-hidden">
-            <h1 class="px-[100px] py-[10px] uppercase">
-              Transcending generations
-            </h1>
-            <img
-              src="./assets/glasses/goggles_1.svg"
-              alt="Googgles 1"
-              class="h-[300px] w-[720px] mx-[100px]"
-            />
-            <h1 class="px-[100px] py-[10px] uppercase">
-              Unrivalled taste for the future elite
-            </h1>
-            <img
-              src="./assets/glasses/goggles_2.svg"
-              alt="Googgles 1"
-              class="h-[300px] w-[720px] mx-[100px]"
-            />
-            <h1 class="px-[100px] py-[10px] uppercase">
-              Flawless indulgence for ladies and gentlemen of distinction
-            </h1>
-            <img
-              src="./assets/glasses/goggles_3.svg"
-              alt="Googgles 1"
-              class="h-[300px] w-[720px] mx-[100px]"
-            />
-            <h1 class="px-[100px] py-[10px] uppercase">
-              The ultimate triumph for every discerning eye
-            </h1>
-            <img
-              src="./assets/glasses/goggles_4.svg"
-              alt="Googgles 1"
-              class="h-[300px] w-[720px] mx-[100px]"
-            />
-          </div>
-
-          <div class="h-full flex items-center overflow-y-hidden">
-            <h1 class="px-[100px] py-[10px] uppercase">
-              Transcending generations
-            </h1>
-            <img
-              src="./assets/glasses/goggles_1.svg"
-              alt="Googgles 1"
-              class="h-[300px] w-[720px] mx-[100px]"
-            />
-            <h1 class="px-[100px] py-[10px] uppercase">
-              Unrivalled taste for the future elite
-            </h1>
-            <img
-              src="./assets/glasses/goggles_2.svg"
-              alt="Googgles 1"
-              class="h-[300px] w-[720px] mx-[100px]"
-            />
-            <h1 class="px-[100px] py-[10px] uppercase">
-              Flawless indulgence for ladies and gentlemen of distinction
-            </h1>
-            <img
-              src="./assets/glasses/goggles_3.svg"
-              alt="Googgles 1"
-              class="h-[300px] w-[720px] mx-[100px]"
-            />
-            <h1 class="px-[100px] py-[10px] uppercase">
-              The ultimate triumph for every discerning eye
-            </h1>
-            <img
-              src="./assets/glasses/goggles_4.svg"
-              alt="Googgles 1"
-              class="h-[300px] w-[720px] mx-[100px]"
-            />
-          </div>
-        </div>
-      </section>
     </main>
 
+
+
+
+
     <script src="./index.js"></script>
-    <script></script>
-  </body>
+    <script>
+
+        const openFooter = () => {
+            gsap.to("#footerOpend", {
+                yPercent: -100,  // Pulls it up by its exact calculated height
+                y: -20,          // Offsets it to match the 20px padding (p-5) of the body
+                duration: 0.6,
+                ease: "power3.out"
+            });
+        };
+
+        const closeFooter = () => {
+            gsap.to("#footerOpend", {
+                yPercent: 0,     // Pushes it right back off-screen
+                y: 0,
+                duration: 0.5,
+                ease: "power3.inOut"
+            });
+        };
+    </script>
+</body>
+
 </html>
