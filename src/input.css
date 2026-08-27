@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@source "../index.html";
+@source "../index.js";
+
+@import "tailwindcss";
+
+@theme {
+  --font-bespoke: "Bespoke Serif", serif;
+  --font-boska: "Boska", serif;
+  --font-panchang: "Panchang", sans-serif;
+}
+

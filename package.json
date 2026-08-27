@@ -1,0 +1,24 @@
+{
+  "name": "dreamcream",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Raxku2/dreamcream#readme",
+  "bugs": {
+    "url": "https://github.com/Raxku2/dreamcream/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raxku2/dreamcream.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
